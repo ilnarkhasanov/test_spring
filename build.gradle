@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.3.1'
     id 'io.spring.dependency-management' version '1.1.5'
+    id "org.sonarqube" version "4.4.1.3373"
 }
 
 group = 'org.ilnarkhasanov'
@@ -21,6 +22,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "ilnarkhasanov_test-spring"
+        property "sonar.organization", "ilnarkhasanov"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
 
 tasks.named('test') {
