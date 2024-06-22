@@ -9,7 +9,7 @@ public class Controller {
     @CrossOrigin("*")
     @GetMapping("/kek")
     public String index() {
-        return 12;
+        return 12dwdd;
     }
 
 }
